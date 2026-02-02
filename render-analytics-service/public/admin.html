@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Analytics Dashboard</title>
+  <link rel="stylesheet" href="admin.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Analytics</div>
+    <nav>
+      <a class="active" href="admin.html">Dashboard</a>
+      <a href="registrations.html">Registrations</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="filters card">
+      <div class="row">
+        <label>Campaign
+          <select id="campaign"></select>
+        </label>
+        <label>Game/Banner
+          <select id="game"></select>
+        </label>
+        <label>Days
+          <select id="days">
+            <option value="7">7</option>
+            <option value="28" selected>28</option>
+            <option value="90">90</option>
+            <option value="365">365</option>
+          </select>
+        </label>
+        <button id="apply">Apply</button>
+      </div>
+      <div class="hint muted">Tip: leave filters blank to see everything.</div>
+    </section>
+
+    <section class="kpis" id="kpis"></section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Trend</h2>
+        <canvas id="line"></canvas>
+      </div>
+      <div class="card">
+        <h2>Funnel</h2>
+        <div id="funnel" class="funnel"></div>
+        <div class="muted" id="rates"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
