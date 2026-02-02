@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 // ---- CORS ----
 // Set ALLOWED_ORIGINS to a comma-separated list of origins you want to allow,
 // e.g. "https://vefbordi.is,https://your-banner-host.com"
-const allowed = (process.env.ALLOWED_ORIGINS || "*").split(",").map(s => s.trim()).filter(Boolean);
+const allowed = (process.env.ALLOWED_ORIGINS || "https://https://pulsmedia.is").split(",").map(s => s.trim()).filter(Boolean);
 
 app.use(cors({
   origin: (origin, cb) => {
